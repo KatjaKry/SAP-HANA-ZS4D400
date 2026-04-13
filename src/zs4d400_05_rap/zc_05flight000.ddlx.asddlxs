@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'CarrierID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'CarrierID'
+annotate view ZC_05FLIGHT000 with
+{
+  @UI.facet: [ {
+    label: 'Allgemeine Informationen', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {   // Edit Modus eines Fluges
+    position: 10 
+  } ]
+  @UI.lineItem: [ {   // Liste der Flüge
+    position: 10 
+  } ]
+  @UI.selectionField: [ {  // Selection der Flüge
+    position: 10 
+  } ]
+  CarrierID;
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  ConnectionID;
+  
+  @UI.identification: [ {
+   position: 30 ,
+   label: 'Flight Date'
+    } ]
+   @UI.lineItem: [ {
+   position: 30 ,
+   label: 'Flight Date'
+     } ]
+ 
+  FlightDate;
+  
+  @UI.identification: [ {
+   position: 40 ,
+   label: 'Flight Price'
+    } ]
+   @UI.lineItem: [ {
+   position: 40 ,
+   label: 'Flight Price'
+     } ]
+  Price;
+  
+  
+  
+  @UI.identification: [ {
+   position: 35 ,
+   label: 'Plane Type'
+    } ]
+   @UI.lineItem: [ {
+   position: 60 ,
+   label: 'Plane Type'
+     } ]
+  
+  PlaneTypeID;
+  
+  
+  
+  @UI.hidden: true
+
+  LocalCreatedBy;
+  
+  
+  @UI.hidden: true
+  LocalCreatedAt;
+  
+  
+  @UI.hidden: true
+  LocalLastChangedBy;
+  
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+  
+  
+  @UI.hidden: true
+  LastChangedAt;
+  
+  
+}

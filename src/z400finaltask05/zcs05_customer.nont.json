@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP-Objektknotentyp ZCS05_CUSTOMER",
+    "originalLanguage": "de",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZCS05_CUSTOMER",
+  "sapObjectType": "ZCS05_CUSTOMER",
+  "rootNode": true
+}

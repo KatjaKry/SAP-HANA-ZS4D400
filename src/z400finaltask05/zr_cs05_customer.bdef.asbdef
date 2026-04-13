@@ -1,0 +1,59 @@
+managed implementation in class ZBP_R_CS05_CUSTOMER unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_CS05_CUSTOMER alias CUSTOMER05
+persistent table ZCS05_CUSTOMER
+extensible
+draft table ZCS05_CUSTOMER_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   Customerid;
+
+  field ( readonly )
+
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+
+  field ( readonly : update )
+   Customerid;
+
+
+
+  create;
+  update;
+  delete;
+
+  determination DetermineCity on modify { field Postcode; }  // on modify geht nicht
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCS05_CUSTOMER corresponding extensible
+  {
+    Customerid = CUSTOMERID;
+    Salutation = SALUTATION;
+    LastName = LAST_NAME;
+    FirstName = FIRST_NAME;
+    Street = STREET;
+    City = CITY;
+    Country = COUNTRY;
+    Postcode = POSTCODE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}
